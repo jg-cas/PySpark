@@ -1,0 +1,23 @@
+name: Data Loader Unit Tests
+
+# Create ubuntu machine
+pool:
+  vmImage: ubuntu-latest
+
+# Install Java
+# Install requirements
+# Run unit tests
+stages:
+  - stage: Tests
+    displayName: Unit Tests
+
+    jobs:
+      - job:
+          displayName: Data Loader Tests
+          steps:
+            - script: |
+                sudo apt-get update
+                sudo apt-get install default-jdk -y
+                pip install -r $(System.DefaultWorkingDirectory)/DataLoader/Test/cicd.txt
+                cd src && python -m unittest -v
+              displayName: Run Unit Tests

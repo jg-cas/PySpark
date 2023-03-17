@@ -9,6 +9,7 @@ session = SparkSession.builder.appName("DataLoader").getOrCreate()
 print("Spark Session created")
 
 # Reading configurations from json for scalability
+# Modify path to file as necessary
 with open("source.json") as source_file:
     data = json.load(source_file)
     for v in data.values():
