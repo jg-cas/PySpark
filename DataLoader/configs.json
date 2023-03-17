@@ -1,0 +1,9 @@
+{
+  "source" : {
+    "class": "csv",
+    "path": "Test/helpers/testData.csv",
+    "header": true,
+    "inferSchema": true,
+    "delimiter": ","
+  }
+}
