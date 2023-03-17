@@ -1,15 +1,18 @@
 import json
 from pyspark.sql import SparkSession
-from ETL import CSVClass
+from Configurations import CSVClass
 
+# prints to be substituted by logging
 print("Starting DataLoader...")
 
 session = SparkSession.builder.appName("DataLoader").getOrCreate()
 print("Spark Session created")
 
-with open("configs.json") as source_file:
+# Reading configurations from json for scalability
+with open("source.json") as source_file:
     data = json.load(source_file)
     for v in data.values():
+        # Factory
         if v['class'] == "csv":
             try:
                 print(f"Processing file with path: {v['path']}")

@@ -1,6 +1,7 @@
 from pyspark.sql.functions import DataFrame
 
 
+# Single Responsibility Principle for testing
 class CommonUtils:
 
     @staticmethod

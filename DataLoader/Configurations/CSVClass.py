@@ -26,4 +26,3 @@ def execute(spark: SparkSession,
         elif isinstance(field.dataType, StringType):
             frequency = Utils.CommonUtils.get_frequency_table(df, field.name)
             frequency.show()
-
